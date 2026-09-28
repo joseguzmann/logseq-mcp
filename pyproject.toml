@@ -1,0 +1,38 @@
+[project]
+name = "logseq-mcp"
+version = "0.1.0"
+description = "Read-only MCP server for Logseq DB graphs: reads the SQLite file directly, no running app or HTTP API needed."
+readme = "README.md"
+authors = [
+    { name = "Jose Guzman", email = "jg175415@gmail.com" }
+]
+requires-python = ">=3.12"
+license = "MIT"
+keywords = ["logseq", "mcp", "model-context-protocol", "claude", "notes"]
+dependencies = [
+    "mcp>=2.2.0",
+]
+
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["tests"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["logseq_mcp", "graphbuilder"]
