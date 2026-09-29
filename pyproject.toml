@@ -13,6 +13,8 @@ dependencies = [
     "mcp>=2.2.0",
 ]
 
+[project.scripts]
+logseq-mcp = "logseq_mcp.server:main"
 
 [build-system]
 requires = ["uv_build>=0.12.1,<0.13.0"]
